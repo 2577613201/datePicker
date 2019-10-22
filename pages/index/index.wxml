@@ -1,0 +1,21 @@
+<!--index.wxml-->
+<view class="container">
+  <view>
+    <text class='red center_cont1_deteTl'>选择时间：</text>
+    <view class='datePicker' wx:for="{{[1,2]}}" wx:key="{{index}}">
+        <picker mode="date" value="{{date1[index]}}" start="{{dateStartTime}}" end="{{curentTime}}" data-index="{{index}}"bindchange="bindDateChange1">
+          <view class="datePickerInp">
+            <input placeholder="起始时间" value="{{date1[index]}}" disabled='disabled' ></input>         
+              <!-- 设置 disabled='disabled'，禁止输入框弹出底部菜单； 
+              data-index为自定义绑定内容，通过e.currentTarget.dataset.index获取 -->
+          </view>     
+        </picker>---
+        <picker mode="date" value="{{date2[index]}}" start="{{dateStartTime}}" end="{{curentTime}}" data-index="{{index}}"bindchange="bindDateChange2">
+          <view class="datePickerInp">
+            <input placeholder="终止时间" value="{{date2[index]}}"  disabled='disabled' ></input>
+            
+          </view>
+        </picker>
+    </view>
+  </view>
+</view>
