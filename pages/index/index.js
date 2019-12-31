@@ -11,6 +11,7 @@ Page({
   },
   onLoad(){
     this.setdatePicker();   //动态设置开始时间和结束时间
+   
   },
   //日期选择
   bindDateChange1: function (e) {
@@ -75,4 +76,16 @@ Page({
     })
 
   },
+  onPullDownRefresh: function () {
+    wx.showToast({
+      title: '刷新',
+    })
+    wx.stopPullDownRefresh() //刷新完成后停止下拉刷新动效
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '易奇分销',
+      path: '/pages/index/index'
+    }
+  }
 })
